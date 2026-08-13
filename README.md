@@ -4,6 +4,17 @@
 
 NestJs as primary framework.
 TypeScript inherit by NestJs as programming language
+Render as deploy tool
+
+## Brief
+Se eligio NestJs como framework ya que integra diversas soluciones "out of the box".
+- Integracion de TypeScript, la cual nos brinda una capa de seguridad en el código como desarrolladores.
+- Separado por dominio, facil definicion y desarrollo de las diferentes funcionalidades, dejando clara la responsabilidad de cada elemento
+- Rápido y facil de hacer deploy
+En una siguiente iteracion, podríamos implementar pruebas unitarias a cada elemento del API.
+
+Deploy url:
+https://universal-cargo-api.onrender.com
 
 ## Project setup
 
@@ -32,6 +43,10 @@ $ npm run start:dev
 curl --location 'http://127.0.0.1:3000/leads'
 ```
 
+```bash
+curl --location 'https://universal-cargo-api.onrender.com/leads'
+```
+
 ### Create Lead
 ```bash
 curl --location 'http://127.0.0.1:3000/leads' \
@@ -44,9 +59,25 @@ curl --location 'http://127.0.0.1:3000/leads' \
 }'
 ```
 
+```bash
+curl --location 'https://universal-cargo-api.onrender.com/leads' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "ignacio",
+    "email": "ignacio@test.com",
+    "company": "Universal Cargo",
+    "message": "Test API"
+}'
+```
+
 ### Health check
+
 ```bash
 curl --location 'http://127.0.0.1:3000'
+```
+
+```bash
+curl --location 'https://universal-cargo-api.onrender.com'
 ```
 
 Output:
