@@ -9,7 +9,7 @@ export class CreateLeadDto {
   })
   name: string;
 
-  @IsEmail({
+  @IsEmail({}, {
     message: 'El email es invalido'
   })
   email: string;
